@@ -1,0 +1,402 @@
+/* 노말라이즈 */
+/* 공통 부분 */
+a {
+  text-decoration: none;
+  color: black;
+}
+/*  */
+
+.header {
+  text-align: center;
+  letter-spacing: -0.5rem;
+}
+
+.header > a {
+  display: inline-block;
+  font-size: 7rem;
+  text-decoration: none;
+  color: black;
+}
+
+nav {
+  text-align: center;
+  font-weight: bold;
+}
+
+nav > section {
+  /* 자식 태그가 뭔가를 정의하지 않으면 부모의 속성을 따라가는 태그도 있다. */
+  display: inline-block;
+  width: 120px;
+}
+
+nav > section > a {
+  /* display: block 상태는 부모의 width 값을 토대로 값이 늘어남  */
+  display: block;
+}
+
+nav > section:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+img {
+  border: 10px solid red;
+}
+
+.aespa {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.aespa > img {
+  width: 100px;
+  height: 600px;
+  /* object-fit: contain; */
+  object-fit: cover;
+}
+
+.images {
+  text-align: center;
+}
+
+.images > div > img {
+  width: 300px;
+  height: 300px;
+  padding: 30px;
+  border: 2px solid green;
+  object-fit: cover;
+}
+
+.images > div > img:first-child {
+  border: 2px solid yellow;
+}
+
+.images > div > img:nth-last-child(2) {
+  border: 2px solid blue;
+}
+
+.images > div > img:last-child {
+  border: 2px solid red;
+}
+
+/*
+옵션에 odd 홀수쪽, even 짝수쪽 넣어준다.
+
+2번째 자식들
+.images > div > img:nth-child(2n) {
+
+}
+
+3번째 자식들
+.images > div > img:nth-child(3n) {
+
+}
+*/
+
+/* div, section, nav, article */
+/* 위의 태그는 속성은 모두 같다 */
+/* 높이 값이 없으면 나타나지 않는다. */
+/* 높이의 기본값은 auto 이다. */
+.num {
+  background: rebeccapurple;
+  display: flex;
+  height: 100px;
+}
+
+.num1 {
+  background: red;
+  height: 100px;
+}
+
+.num2 {
+  background: orange;
+  height: 100px;
+}
+
+.artBox {
+  display: flex;
+  background: red;
+}
+
+/* ,콤마를 이용하면 class 여러개를 적용할수 있다. */
+.num3,
+.num4,
+.num5 {
+  background: blue;
+  width: 200px;
+  height: 200px;
+  /* block 변화가 없다. block 기본값으로 가지고 있다. */
+  /* display: block;  */
+  /* inline-block 은 텍스트에 맞게 타이트 하게 화면이 조정된다. */
+  display: inline-block;
+  /* 폰트의 기본은 16이고, 3rem은 3의 배수이다. */
+  font-size: 3rem;
+  /* color: white; */
+  /* 텍스트를 상하 중심에 위치한다. */
+  align-content: center;
+  /* 텍스트를 좌우 중심에 위치한다. */
+  text-align: center;
+  /* letter-spacing 텍스트 자간 마이너스 값도 지정가능하다. */
+  letter-spacing: 10px;
+  /* 16진수로 컬러는 명시 */
+  color: #ff0000ff;
+}
+
+table {
+  /* 보더의 속성을 변경 선으로만 표면 */
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+/* div a 는 이렇게 구성된 모든 태그의 속성을 정의 */
+/*
+div a {
+    background: rebeccapurple;
+}
+*/
+
+/* div > a div 안에 a 태그만 정의 */
+/*
+div > a {
+    background: rebeccapurple;
+}
+*/
+
+.bo {
+  /* border: 1px dashed red; */
+  border: 1px solid red;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.boxAtag {
+  text-align: right;
+}
+
+.link {
+  display: block;
+  /* text-decoration: none 은 언더바를 없앤다. */
+  text-decoration: none;
+}
+
+.box {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: blue;
+}
+
+.colorBox {
+  border: 1px solid red;
+  padding: 20px;
+  text-align: center;
+}
+
+.hello {
+  /* text-align : center 가 안될때 display는 inline-block 형태가 되어야 된다. */
+  display: inline-block;
+  border: 1px solid blue;
+  padding: 20px;
+  width: 50px;
+}
+
+/* hover 는 마우스를 올릴때 */
+.hello:hover {
+  border: 1px solid green;
+}
+
+/* 정렬 */
+.redBox {
+  height: 100px;
+  background: red;
+  /* 아래와 같이 정렬할수도 있다 */
+  width: 200px;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.greenBox {
+  height: 100px;
+  background: green;
+  /* margin-left, margin-right를 auto로 뒀을때 중앙정렬 */
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+
+/* 선택자 */
+/*
+section > * {
+
+}
+
+div ~ nav {
+
+}
+*/
+
+/* div {
+  border-radius: 10px 20px 30px 40px;
+  border-radius: 50%;
+} */
+
+.aaa {
+  /* inherit 부모의 속성을 받아온다. */
+  color: inherit;
+  text-decoration: none;
+}
+
+.items {
+  text-align: center;
+  background: #dfdfdf;
+  display: inline-block;
+  width: 400px;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.items > div {
+  display: inline-block;
+  padding-right: 32px;
+}
+
+ol {
+  display: inline-block;
+  border: 1px solid red;
+}
+
+ul {
+  /* list-style: none은 점을 없앤다. */
+  list-style: none;
+  border: 1px solid red;
+}
+
+.grid {
+  border: 1px solid red;
+  height: 100px;
+}
+
+.grid > div {
+  background: rebeccapurple;
+  height: 100%;
+  width: 50%;
+  display: inline-block;
+}
+
+.grid > div:last-child {
+  background: gold;
+}
+
+.lorem > div {
+  width: 200px;
+  height: 200px;
+  border: 10px solid red;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.lorem > .box-1 {
+  background: blue;
+}
+
+.lorem > .box-2 {
+  background: gold;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.inline-grid {
+  width: 100%;
+  font-size: 0;
+}
+
+.inline-grid {
+  font-size: 1rem;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: content-box;
+}
+
+.inline-grid > div {
+  width: calc(100% / 7);
+  /* height: 44px; */
+  /* background: red; */
+  display: inline-block;
+  border: 0px solid black;
+  border-width: 0 1px;
+  text-align: center;
+}
+
+.pos {
+  /* width: 100px; */
+  height: 300px;
+  border: 2px solid rebeccapurple;
+  /* posiotion absolute 상태면 이동가능하다. */
+  /* stack 같은 의미이다. */
+  /* position: absolute; */
+  /* posiotion: fixed 는 포지션고정된다. */
+  /* position: fixed; */
+  /* top: 100px; */
+  /* left: 100px; */
+  position: relative;
+  left: 100px;
+  transform: translateX(-200px);
+}
+
+.pos > div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: absolute;
+}
+
+.pos > div:last-child {
+  width: 100px;
+  height: 100px;
+  background: green;
+  /* position: relative; */
+}
+
+p {
+  background: red;
+  font-size: 2rem;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.ani {
+  height: 100px;
+  background: rebeccapurple;
+  display: flex;
+  flex-direction: row;
+  
+  border: 2px solid red;
+}
+
+.ani > div {
+  width: 100px;
+  height: inherit;
+  display: flex;
+  background-color: aqua;
+  align-items: center;
+  justify-content: center;
+}
+
+.ani > div:nth-child(2) {
+  width: 100px;
+  height: inherit;
+  background-color: red;
+  order: 2;
+}
+
+.ani > div:nth-child(4) {
+  width: 100px;
+  height: inherit;
+  background-color: green;
+}
