@@ -1,3 +1,9 @@
+/* 변수 */
+:root {
+  /* 전역변수 정의다. */
+  --site-width: 500px;
+}
+
 /* 노말라이즈 */
 /* 공통 부분 */
 a {
@@ -375,7 +381,6 @@ p {
   background: rebeccapurple;
   display: flex;
   flex-direction: row;
-  
   border: 2px solid red;
 }
 
@@ -399,4 +404,107 @@ p {
   width: 100px;
   height: inherit;
   background-color: green;
+}
+
+.cover {
+  /* 변수를 사용한다. */
+  --site-width: 1000px;
+
+  /* 반응형시 max-width 를 사용해야 한다. */
+  /* max-width: 1000px; */
+  max-width: var(--site-width);
+  background: red;
+  border: 3px solid green;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.get {
+  /* 전역변수에 --site-width 를 불러온다. */
+  max-width: var(--site-width);
+  height: 100px;
+  background: rebeccapurple;
+  margin: 0 auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 1px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.item {
+  background-color: #f2f2f2;
+}
+
+.content {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: green;
+  aspect-ratio: 1 / 1; /* 비율을 정사각형으로 유지 */
+}
+
+.item > p {
+  font-size: 11px;
+}
+
+/* 반응형 */
+/* [] 대괄호, () 소괄호 */
+/* min-width 이상 */
+/* max-width 이하 */
+
+/* >= 이상, > 초과, <= 이하, < 미만 */
+
+/* 화면 너비가 1000px 이하 일때 */
+/* 화면 너비가 700px 이상 일때 */
+
+/* @media (max-width: 1000px) and (min-width: 701px) {
+  .cover {
+    background: blue;
+    max-width: 800px;
+    border-color: gold;
+  }
+} */
+
+/* 기호로 사용할수도 있다. */
+@media (width >= 1000px) {
+  .cover {
+    background: blue;
+    max-width: 800px;
+    border-color: gold;
+  }
+}
+
+/* 화면 너비가 700px 이하 일때 */
+/* 화면 너비가 400px 이상 일때 */
+
+/* @media (max-width: 700px) and (min-width: 401px) {
+  .cover {
+    background: blue;
+    max-width: 500px;
+    border-color: red;
+  }
+} */
+
+/* 700px 이하, 400px이상 */
+@media (700px > width >= 400px) {
+  .cover {
+    background: blue;
+    max-width: 500px;
+    border-color: red;
+  }
+}
+
+/* 화면 너비가 400px 이하 일때 */
+@media (max-width: 400px) {
+  .cover {
+    background: orange;
+    max-width: 300px;
+    height: 200px;
+    border-color: pink;
+  }
 }
