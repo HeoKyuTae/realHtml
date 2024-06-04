@@ -452,6 +452,83 @@ p {
   font-size: 11px;
 }
 
+/* 화면 비율에 맞게 조정 */
+.dina {
+  width: 50%;
+  border: 2px solid red;
+}
+
+.dina > section {
+  /* padding-top 이 .dina 의 높이로 적용이 된다. */
+  padding-top: 50%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 그리드 컬럼 설정 */
+  gap: 1px; /* 그리드 간격 설정 */
+  /* list-style: none; */
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+}
+
+.grid-container > li {
+  background-color: lightblue; /* 각 아이템의 배경색 설정 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1 ;
+}
+
+.cont {
+  border: 2px solid red;
+  display: flex;
+  /* flex-wrap 줄바꿈 */
+  flex-wrap: wrap;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.one {
+  border: 2px solid rebeccapurple;
+  /* flex-grow: 1; */
+  flex-basis: 30px;
+  flex-shrink: 0;
+}
+
+.two {
+  border: 2px solid rebeccapurple;
+  /* flex-grow: 1; */
+  flex-basis: 60px;
+  flex-shrink: 0;
+}
+
+.three {
+  border: 2px solid rebeccapurple;
+  /* flex-grow: 1; */
+  flex-basis: 150px;
+  /*  flex-shrink 150px 안에 width을 알아서 조정 */
+  flex-shrink: 1;
+}
+
+.cont1 {
+  border: 2px solid red;
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.cont1 div {
+  border: 2px solid green;
+}
+
+
 /* 반응형 */
 /* [] 대괄호, () 소괄호 */
 /* min-width 이상 */
